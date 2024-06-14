@@ -7,7 +7,7 @@ services:
     stop_grace_period: 2m
     userns_mode: keep-id:uid=999
     volumes:
-      - /angular-recipe/RavenDb/RavenData:/var/lib/ravendb/data
+      - /run/desktop/mnt/host/c/angular-recipe/RavenDb/RavenData:/var/lib/ravendb/data
       - ./ravendb/settings.json:/opt/RavenDB/Server/settings.json
     environment:
       - RAVEN_Setup_Mode=None
