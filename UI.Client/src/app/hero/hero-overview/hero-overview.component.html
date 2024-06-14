@@ -1,0 +1,7 @@
+<h2>Hero overview</h2>
+<p>Total heroes: {{ heroStore.total }}</p>
+
+<app-hero-list [heroStore]="heroStore"></app-hero-list>
+<app-hero-detail [heroStore]="heroStore"></app-hero-detail>
+
+<router-outlet />

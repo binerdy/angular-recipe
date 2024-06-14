@@ -1,0 +1,23 @@
+version: '3.7'
+name: angular-recipe
+
+services:
+  ravendb:
+    image: ravendb/ravendb:6.0.102-ubuntu.22.04-x64
+    stop_grace_period: 2m
+    userns_mode: keep-id:uid=999
+    volumes:
+      - /angular-recipe/RavenDb/RavenData:/var/lib/ravendb/data
+      - ./ravendb/settings.json:/opt/RavenDB/Server/settings.json
+    environment:
+      - RAVEN_Setup_Mode=None
+      - RAVEN_License_Eula_Accepted=true
+      - RAVEN_Security_UnsecuredAccessAllowed=PrivateNetwork
+    ports:
+      - 8082:8080
+      - 38888:38888
+
+    deploy:
+      resources:
+        limits:
+          memory: 8G

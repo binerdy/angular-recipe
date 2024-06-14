@@ -1,0 +1,6 @@
+<h2>Hero list</h2>
+<ul>
+  @for (hero of heroStore.heroes; track $index) {
+    <li><a (click)="heroStore.setCurrentHeroId(hero.id)">{{hero.name}}</a></li>
+  }
+</ul>

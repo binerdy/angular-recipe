@@ -1,0 +1,19 @@
+{
+    "Setup.Mode": "Unsecured",
+    "Security.UnsecuredAccessAllowed": "PublicNetwork",
+    "ServerUrl": "http://0.0.0.0:8080",
+    "ServerUrl.Tcp": "tcp://0.0.0.0:38888",
+    "License.Eula.Accepted": true,
+    "Query.MaxClauseCount": 32768,
+    "Patching.MaxStepsForScript": 0,
+    "Logs.RetentionSizeInMb": 2048,
+    "Cluster.ElectionTimeoutInMs": 600,
+    "Cluster.OperationTimeoutInSec": 60,
+    "Cluster.StatsStabilizationTimeInSec": 10,
+    "Cluster.TcpTimeoutInMs": 15000,
+    "Server.MaxTimeForTaskToWaitForDatabaseToLoadInSec": 60,
+    "Databases.ConcurrentLoadTimeoutInSec": 60,
+    "Databases.MaxConcurrentLoads": 4,
+    "Backup.MaxNumberOfConcurrentBackups": 2,
+    "Indexing.DisableQueryOptimizerGeneratedIndexes": false
+}
