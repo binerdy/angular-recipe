@@ -1,5 +1,7 @@
 ﻿using Common;
 using DataAccess;
+using Microsoft.Extensions.Options;
+using Raven.Client.Documents;
 using GenericHost = Microsoft.Extensions.Hosting.Host;
 
 namespace ReferenceData.Host
@@ -13,6 +15,7 @@ namespace ReferenceData.Host
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
+                        .UseKestrel()
                         .ConfigureServices((context, services) =>
                         {
                             services.AddControllers();
@@ -50,7 +53,11 @@ namespace ReferenceData.Host
                 })
                 .ConfigureServices(serviceCollection =>
                 {
-                    serviceCollection.AddSingleton<IDocumentStoreHolder, DocumentStoreHolder>();
+                    serviceCollection.AddSingleton<IDocumentStore>(serviceCollection =>
+                    {
+                        var ravenSettings = serviceCollection.GetRequiredService<IOptions<RavenSettings>>();
+                        return DocumentStoreFactory.CreateInstance(ravenSettings.Value);
+                    });
                 })
                 .Build();
 

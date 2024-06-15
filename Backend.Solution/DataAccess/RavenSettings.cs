@@ -16,10 +16,6 @@ namespace Common
 
         public int MaxHttpCacheSizeInMb { get; set; }
 
-        public bool MetricsEnabled { get; set; }
-
-        public bool ReadOnly { get; set; }
-
         public IReadOnlyCollection<Assembly> IndexAssemblies { get; set; } = [];
     }
 }

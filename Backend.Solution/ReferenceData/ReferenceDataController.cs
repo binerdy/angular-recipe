@@ -14,15 +14,19 @@ namespace ReferenceData.Host.Controllers
 
         public ReferenceDataController(
             ILogger<ReferenceDataController> logger,
-            IDocumentStoreHolder documentStoreHolder)
+            IDocumentStore documentStore)
         {
             this.logger = logger;
-            this.documentStore = documentStoreHolder.DocumentStore;
+            this.documentStore = documentStore;
         }
 
         [HttpGet(Name = "record")]
         public IEnumerable<ReferenceDataRecord> GetReferenceDataRecord()
         {
+            using (var session = this.documentStore.OpenSession())
+            {
+            }
+
             return [];
         }
     }
