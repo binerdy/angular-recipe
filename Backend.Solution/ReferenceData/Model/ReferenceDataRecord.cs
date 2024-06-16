@@ -14,6 +14,6 @@ namespace ReferenceData.Model
 
         public required DateOnly ValidTo { get; set; }
 
-        protected override string CreateId() => $"{ReferenceDataType}/${Key}";
+        protected override string CreateId() => $"{ReferenceDataType}/{Key}";
     }
 }

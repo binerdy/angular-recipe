@@ -28,7 +28,7 @@ namespace ReferenceData.Host.Controllers
                 await session.StoreNewRevision(new ReferenceDataRecord
                 {
                     Key = "flight",
-                    DisplayName = "Flight",
+                    DisplayName = "Flight 2",
                     ReferenceDataType = ReferenceDataType.Power,
                     ValidFrom = new DateOnly(1900, 1, 1),
                     ValidTo = new DateOnly(2100, 1, 1),
