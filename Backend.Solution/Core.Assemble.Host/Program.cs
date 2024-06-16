@@ -1,10 +1,9 @@
-﻿using Common;
-using DataAccess;
 using Microsoft.Extensions.Options;
 using Raven.Client.Documents;
+using Shared.DataAccess;
 using GenericHost = Microsoft.Extensions.Hosting.Host;
 
-namespace ReferenceData.Host
+namespace Assemble.Host
 {
     public class Program
     {
@@ -43,7 +42,7 @@ namespace ReferenceData.Host
                 .ConfigureServices((context, services) =>
                 {
                     services.Configure<RavenSettings>(context.Configuration.GetSection("RavenDb"))
-                            .Configure<RavenSettings>(context.Configuration.GetSection("ReferenceData:RavenDb"))
+                            .Configure<RavenSettings>(context.Configuration.GetSection("Assemble:RavenDb"))
                             .PostConfigure<RavenSettings>(ravenSettings =>
                             {
                                 ravenSettings.IndexAssemblies = [

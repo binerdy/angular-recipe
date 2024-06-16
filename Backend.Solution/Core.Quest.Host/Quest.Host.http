@@ -1,0 +1,6 @@
+@Quest.Host_HostAddress = http://localhost:5073
+
+GET {{Quest.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

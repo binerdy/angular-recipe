@@ -1,15 +1,14 @@
-﻿using Common;
-using Raven.Client.Documents;
+﻿using Raven.Client.Documents;
 using Raven.Client.Documents.Operations;
-using Raven.Client.Exceptions.Database;
 using Raven.Client.Exceptions;
-using Raven.Client.ServerWide.Operations;
+using Raven.Client.Exceptions.Database;
 using Raven.Client.ServerWide;
+using Raven.Client.ServerWide.Operations;
 using Sparrow;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 
-namespace DataAccess
+namespace Shared.DataAccess
 {
     /// <summary>
     /// Configures a document store for a specific database. Creates the database if it doesn't exist.

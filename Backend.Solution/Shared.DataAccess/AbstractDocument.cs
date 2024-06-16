@@ -1,6 +1,6 @@
 ﻿using Raven.Client.Documents.Conventions;
 
-namespace ReferenceData
+namespace Shared.DataAccess
 {
     public abstract record AbstractDocument
     {

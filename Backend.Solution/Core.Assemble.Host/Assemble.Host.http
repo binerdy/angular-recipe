@@ -1,0 +1,6 @@
+@Assemble.Host_HostAddress = http://localhost:5299
+
+GET {{Assemble.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
